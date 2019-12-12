@@ -1,7 +1,16 @@
 package src.mua.dataType;
 
 public class Bool extends MUAObject {
-    // ctor
+    /**
+     * @Member: value
+     * @Method: Bool
+     * getTypeString
+     * getValue
+     * toString
+     **/
+
+    private boolean value;
+
     public Bool(boolean b) {
         this.value = b;
     }
@@ -23,7 +32,4 @@ public class Bool extends MUAObject {
         else
             return "false";
     }
-
-    // data members
-    private boolean value;
 }

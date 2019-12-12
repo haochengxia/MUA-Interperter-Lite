@@ -15,23 +15,17 @@ import static src.mua.utils.ParserUtil.parseToken;
 
 public class Interpreter {
 
-    public final static String pOne = ">>> ";
-    public final static String pTwo = "... ";
+
     public Interpreter() {
         this.global = new Scope();
 
-        //System.out.println("[MUA Interpreter v2.00 release on 12/12/2019]");
-        //System.out.println("[Copyright @Haocheng Xia]");
     }
 
 
-    public static String getLine(boolean verbose) throws Exception {
-        Scanner input = new Scanner(System.in);
-        promptOne(verbose);
-        String line = getLineWithoutComment();
+    public static String getLine(String rawLine,Scanner LineStarch) throws Exception {
+        String line = getLineWithoutComment(rawLine);
         while (line.trim().equals("")) {
-            promptOne(verbose);
-            line = getLineWithoutComment();
+            line = getLineWithoutComment(line);
         }
         while (true) {
             boolean inWord = false;
@@ -44,21 +38,19 @@ public class Interpreter {
                     inWord = false;
                 if (line.charAt(i) == '[' && !inWord) {
                     count++;
-                }
-                else if (line.charAt(i) == ']' && !inWord) {
+                } else if (line.charAt(i) == ']' && !inWord) {
                     count--;
                 }
                 if (count < 0) {
-                    throw new SyntaxException("Unpaired ']'");
+                    throw new SyntaxException("lost ']'");
                 }
             }
             if (count != 0) {
-                promptTwo(verbose);
-                String temp = getLineWithoutComment();
+                // we need to get the next line
+                String temp = getLineWithoutComment(LineStarch.nextLine());
                 line += " " + temp;
                 continue;
-            }
-            else
+            } else
                 break;
         }
         return line;
@@ -69,24 +61,21 @@ public class Interpreter {
         ArrayList<String> tokens = parseToken(line);
         ArrayList<MUAObject> objlist = parseObj(tokens, global);
         if (objlist.size() != 1) {
-            throw new SyntaxException("Invalid syntax: more than one object per line");
-        }
-        else {
+            throw new SyntaxException("Invalid syntax: more than one object in one line");
+        } else {
             MUAObject obj = objlist.get(0);
             if (obj instanceof Expr) {
-                MUAObject ret = ((Expr)obj).eval(global);
-                if (! (ret instanceof None)) {
+                MUAObject ret = ((Expr) obj).eval(global);
+                if (!(ret instanceof None)) {
                     System.out.println(ret);
                 }
-            }
-            else {
+            } else {
                 System.out.println(obj);
             }
         }
     }
-    private static  String getLineWithoutComment() {
-        Scanner input = new Scanner(System.in);
-        String line = input.nextLine();
+
+    private static String getLineWithoutComment(String line) {
         int i = line.indexOf("//");
         if (i != -1) {
             line = line.substring(0, i);
@@ -94,28 +83,16 @@ public class Interpreter {
         return line;
     }
 
-    public void next()  {
+    public void next(String line,Scanner LineStarch) {
         try {
-            String line = getLine(true);
-            evalLine(line);
-        }
-        catch (MUAException e) {
+            // before that we need to format the line
+            String formattedLine = getLine(line,LineStarch);
+            evalLine(formattedLine);
+        } catch (MUAException e) {
             System.out.println(e.getMessage());
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    public static void promptOne(boolean verbose) {
-        if (verbose)
-            System.out.print(pOne);
-    }
-    public static void promptTwo(boolean verbose) {
-        if (verbose)
-            System.out.print(pTwo);
-    }
-
-
     private Scope global = new Scope();
 }

@@ -1,13 +1,28 @@
 package src.mua.dataType;
 
 public class Word extends MUAObject {
+
+    /**
+     * @Member: value
+     * @Method: Word
+     * getTypeString
+     * getValue
+     * toString
+     **/
+
+    /* ctor */
+
+    // number
     public Word(double d) {
         this.value = Double.toString(d);
     }
 
+    // bool
     public Word(boolean b) {
         this.value = Boolean.toString(b);
     }
+
+    // Str
     public Word(String str) {
         this.value = str;
     }

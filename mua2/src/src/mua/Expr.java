@@ -7,74 +7,43 @@ import src.mua.interpreter.Scope;
 
 import java.util.ArrayList;
 
+/**
+ * @Member: argList
+ * @Method: eval
+ * getOpName
+ * getArgNum
+ * setArgList
+ * getTypeString
+ * getValue
+ * toString
+ **/
+
+
 abstract public class Expr extends MUAObject {
 
-//    public enum SubType {
-//        MAKE,
-//        ERASE,
-//        PRINT,
-//        READLIST,
-//        THING,
-//        ISNAME,
-//        READ,
-//        REPEAT,
-//        ADD, SUB, MUL, DIV, MOD,
-//        EQ, GT, LT,
-//        AND, OR, NOT,
-//
-//        FUNC,
-//        BASIC;
-//
-//        @Override
-//        public String toString() {
-//            switch (this) {
-//                case MAKE: return "make";
-//                case ERASE: return "erase";
-//                case PRINT: return "print";
-//                case READLIST: return "readlist";
-//                case THING: return "thing";
-//                case ISNAME: return "isname";
-//                case READ: return "read";
-//                case REPEAT: return "repeat";
-//                case FUNC: return "func";
-//                case ADD: return "add";
-//                case SUB: return "sub";
-//                case EQ: return "eq";
-//                case GT: return "gt";
-//                case AND: return "and";
-//                case OR: return "or";
-//                case NOT: return "not";
-//            }
-//            return "UNKNOWN";
-//        }
-//    }
-
+    protected ArrayList<MUAObject> argList = new ArrayList<>();
 
     @Override
     public String getTypeString() {
         return "expr";
     }
 
-    // get operation name
     abstract public String getOpName();
 
-    // evaluation
     public MUAObject eval(Scope scope) throws Exception {
-        ArgUtil.evalAll(arglist, scope);
-        for (MUAObject obj : arglist) {
+        ArgUtil.evalAll(argList, scope);
+        for (MUAObject obj : argList) {
             if (obj instanceof None)
-                throw new SyntaxException("operation without a return value cannot be used as an argument");
+                throw new SyntaxException("no return value");
 
         }
         return new None();
     }
 
-    // argument list
-    public void setArglist(ArrayList<MUAObject> arglist) {
-        this.arglist = arglist;
+    public void setArgList(ArrayList<MUAObject> argList) {
+        this.argList = argList;
     }
 
-    // correct argument count
     abstract public int getArgNum();
 
 
@@ -85,14 +54,10 @@ abstract public class Expr extends MUAObject {
 
     @Override
     public String toString() {
-        String temp = getOpName();
-        for (MUAObject arg: arglist) {
-            temp += " " + arg.toString();
+        String tmp = getOpName();
+        for (MUAObject arg : argList) {
+            tmp += " " + arg.toString();
         }
-        return temp;
+        return tmp;
     }
-
-
-    protected ArrayList<MUAObject> arglist = new ArrayList<>();
-
 }

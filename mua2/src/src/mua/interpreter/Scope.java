@@ -4,10 +4,19 @@ import java.util.HashMap;
 import src.mua.dataType.*;
 
 public class Scope {
+
+    /**
+     * Description: As we add func, we need GLOBAL scope and FUNCTION scope
+     */
+
+
     public enum Type {
         GLOBAL,
         FUNCTION
     }
+
+    private boolean stopFlag = false;
+    private HashMap<String, MUAObject> scope = new HashMap<>();
 
     // by default create a global scope
     public Scope() {
@@ -86,7 +95,4 @@ public class Scope {
     public void setStopFlag(boolean stopFlag) {
         this.stopFlag = stopFlag;
     }
-
-    private boolean stopFlag = false;
-    private HashMap<String, MUAObject> scope = new HashMap<>();
 }

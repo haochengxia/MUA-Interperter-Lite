@@ -1,11 +1,14 @@
 package src.mua.exception;
 
 public class NameException extends MUAException {
-    public NameException(String text) {
-        super(text);
+
+    public NameException(String str) {
+
+        super(str);
+
     }
     @Override
     public String getMessage() {
-        return "NameError: " + super.getMessage();
+        return "Name Exception: " + super.getMessage();
     }
 }

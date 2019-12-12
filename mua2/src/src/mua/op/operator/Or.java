@@ -18,20 +18,20 @@ public class Or extends Expr {
     @Override
     public Word eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-        Bool a = (Bool) arglist.get(0);
-        Bool b = (Bool) arglist.get(1);
+        ArgUtil.argCheck(getOpName(), argTypes, argList);
+        Bool a = (Bool) argList.get(0);
+        Bool b = (Bool) argList.get(1);
         return new Word(a.getValue() || b.getValue());
     }
 
 
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
+    final static private ArrayList<Class> argTypes = new ArrayList<Class>(Arrays.asList(
             Bool.class,
             Bool.class
     ));
 
     public int getArgNum() {
-        return argtypes.size();
+        return argTypes.size();
     }
 }
 

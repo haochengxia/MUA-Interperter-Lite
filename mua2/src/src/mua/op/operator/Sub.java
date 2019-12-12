@@ -20,19 +20,19 @@ public class Sub extends Expr {
     @Override
     public Word eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-        Number a = (Number) arglist.get(0);
-        Number b = (Number) arglist.get(1);
+        ArgUtil.argCheck(getOpName(), argTypes, argList);
+        Number a = (Number) argList.get(0);
+        Number b = (Number) argList.get(1);
         return new Word(a.getValue() - b.getValue());
     }
 
 
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
+    final static private ArrayList<Class> argTypes = new ArrayList<Class>(Arrays.asList(
             Number.class,
             Number.class
     ));
 
     public int getArgNum() {
-        return argtypes.size();
+        return argTypes.size();
     }
 }

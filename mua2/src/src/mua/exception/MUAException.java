@@ -1,7 +1,10 @@
 package src.mua.exception;
 
 public class MUAException extends Exception {
-    public MUAException(String text) {
-        super(text);
+
+    public MUAException(String str) {
+
+        super(str);
+
     }
 }

@@ -9,7 +9,17 @@ import src.mua.utils.ArgUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * @Method: eval
+ * getOpName
+ * getArgNum
+ **/
+
+
 public class Stop extends Expr {
+
+    final static private ArrayList<Class> argTypes = new ArrayList<Class>(Arrays.asList());
+
     @Override
     public String getOpName() {
         return "stop";
@@ -18,21 +28,13 @@ public class Stop extends Expr {
     @Override
     public None eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-//        MUAObject obj = arglist.get(0);
-//        if (obj instanceof Word)
-//            System.out.println(obj);
-//        else
-//        System.out.println(obj);
+        ArgUtil.argCheck(getOpName(), argTypes, argList);
         scope.setStopFlag(true);
-//        System.out.println("What");
         return new None();
     }
 
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
-    ));
     public int getArgNum() {
-        return argtypes.size();
+        return argTypes.size();
     }
 
 }

@@ -2,12 +2,13 @@ package src.mua.exception;
 
 public class TypeException extends MUAException {
 
-    public TypeException(String s) {
-        super(s);
+    public TypeException(String str) {
+
+        super(str);
     }
 
     @Override
     public String getMessage() {
-        return "TypeError: " + super.getMessage();
+        return "Type Exception: " + super.getMessage();
     }
 }

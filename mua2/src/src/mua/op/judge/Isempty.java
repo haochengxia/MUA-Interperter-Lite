@@ -10,7 +10,16 @@ import src.mua.utils.ArgUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * @Method: eval
+ * getOpName
+ * getArgNum
+ **/
+
 public class Isempty extends Expr {
+
+    final static private ArrayList<Class> argTypes = new ArrayList<Class>(Arrays.asList(MUAObject.class));
+
     @Override
     public String getOpName() {
         return "isempty";
@@ -19,8 +28,8 @@ public class Isempty extends Expr {
     @Override
     public Word eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-        MUAObject obj = arglist.get(0);
+        ArgUtil.argCheck(getOpName(), argTypes, argList);
+        MUAObject obj = argList.get(0);
         if (obj instanceof Word) {
             return new Word(((Word)obj).getValue().equals(""));
         }
@@ -28,15 +37,8 @@ public class Isempty extends Expr {
             return new Word(((List) obj).getValue().size() == 0);
     }
 
-
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
-            MUAObject.class
-    ));
-
     public int getArgNum() {
-        return argtypes.size();
+        return argTypes.size();
     }
-
-
 }
 

@@ -23,8 +23,7 @@ import java.util.HashMap;
 public class ParserUtil {
     public static MUAObject parseBasicObj(String str) throws Exception {
         if (str.startsWith("\"")) {
-//            if (str.length() == 1)
-//                throw new SyntaxError("empty word body");
+
             return new Word(str.substring(1));
         } else if (str.equals("false")) {
 //            return new Bool(false);
@@ -82,7 +81,7 @@ public class ParserUtil {
                     arglist.add(objlist.remove(0));
                 }
             }
-            expr.setArglist(arglist);
+            expr.setArgList(arglist);
             objlist.add(0, expr);
         } else {
             c = Func.class;
@@ -94,7 +93,7 @@ public class ParserUtil {
                     arglist.add(objlist.remove(0));
                 }
             }
-            func.setArglist(arglist);
+            func.setArgList(arglist);
             objlist.add(0, func);
         }
     }

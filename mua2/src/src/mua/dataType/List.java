@@ -3,6 +3,16 @@ package src.mua.dataType;
 import java.util.ArrayList;
 
 public class List extends MUAObject {
+    /**
+     * @Member: value
+     * @Method: List
+     * getTypeString
+     * getValue
+     * toString
+     **/
+
+    private ArrayList<MUAObject> value;
+
     public List(ArrayList<MUAObject> list) {
         this.value = list;
     }
@@ -11,11 +21,10 @@ public class List extends MUAObject {
     public String toString() {
         String content = "";
         boolean first = true;
-        for (MUAObject v: value) {
+        for (MUAObject v : value) {
             content += (first ? "" : " ") + v.toString();
             first = false;
         }
-//        return String.join(" ", value);
         return "[" + content + "]";
     }
 
@@ -29,5 +38,5 @@ public class List extends MUAObject {
         return value;
     }
 
-    private ArrayList<MUAObject> value;
+
 }

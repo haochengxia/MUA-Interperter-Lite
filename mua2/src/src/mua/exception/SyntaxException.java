@@ -1,11 +1,14 @@
 package src.mua.exception;
 
 public class SyntaxException extends MUAException {
-    public SyntaxException(String s) {
-        super(s);
+
+    public SyntaxException(String str) {
+
+        super(str);
+
     }
     @Override
     public String getMessage() {
-        return "SyntaxError: " + super.getMessage();
+        return "Syntax Exception: " + super.getMessage();
     }
 }

@@ -1,7 +1,15 @@
 package src.mua.dataType;
 
 public class None extends MUAObject {
+    /**
+     * @Method: None
+     * getTypeString
+     * getValue
+     * toString
+     **/
+
     public None() {
+        /* ctor */
     }
 
     @Override
@@ -16,7 +24,7 @@ public class None extends MUAObject {
 
     @Override
     public String toString() {
-        return "None";
+        return "None(None Type)";
     }
 
 }

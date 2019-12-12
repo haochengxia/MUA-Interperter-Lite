@@ -12,6 +12,12 @@ import src.mua.utils.ArgUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * @Method: eval
+ * getOpName
+ * getArgNum
+ **/
+
 public class Make extends Expr {
 
 
@@ -23,24 +29,22 @@ public class Make extends Expr {
     @Override
     public None eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-        Word word = (Word) arglist.get(0);
+        ArgUtil.argCheck(getOpName(), argTypes, argList);
+        Word word = (Word) argList.get(0);
         if (!Character.isLetter(word.getValue().charAt(0)))
-            throw new SyntaxException("<word> in make must start with a letter");
-        MUAObject value = arglist.get(1);
+            throw new SyntaxException("Error: Word format");
+        MUAObject value = argList.get(1);
         scope.addName(word, value);
-        // function enclosing scope
-
         return new None();
     }
 
 
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
+    final static private ArrayList<Class> argTypes = new ArrayList<Class>(Arrays.asList(
             Word.class,
             MUAObject.class
     ));
 
     public int getArgNum() {
-        return argtypes.size();
+        return argTypes.size();
     }
 }

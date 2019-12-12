@@ -12,7 +12,19 @@ import src.mua.utils.RunUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class If  extends Expr {
+/**
+ * @Method: eval
+ * getOpName
+ * getArgNum
+ **/
+
+public class If extends Expr {
+
+    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
+            Bool.class,
+            List.class,
+            List.class
+    ));
 
     @Override
     public String getOpName() {
@@ -22,10 +34,11 @@ public class If  extends Expr {
     @Override
     public None eval(Scope scope) throws Exception {
         super.eval(scope);
-        ArgUtil.argCheck(getOpName(), argtypes, arglist);
-        Bool cond = (Bool) arglist.get(0);
-        List listA = (List) arglist.get(1);
-        List listB = (List) arglist.get(2);
+        ArgUtil.argCheck(getOpName(), argtypes, argList);
+        /** get three para **/
+        Bool cond = (Bool) argList.get(0);
+        List listA = (List) argList.get(1);
+        List listB = (List) argList.get(2);
         if (cond.getValue()) {
             RunUtil.runList(scope, listA);
         }
@@ -37,11 +50,6 @@ public class If  extends Expr {
 
     }
 
-    final static private ArrayList<Class> argtypes = new ArrayList<Class>(Arrays.asList(
-            Bool.class,
-            List.class,
-            List.class
-    ));
     public int getArgNum() {
         return argtypes.size();
     }
