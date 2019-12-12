@@ -52,7 +52,7 @@ public class Func extends Expr {
         for (int i = 0; i < argNames.size(); i++) {
             local.addName(argNames.get(i), arglist.get(i));
         }
-        MUAObject ret = RunningUtil.runList(local, body);
+        MUAObject ret = RunUtil.runList(local, body);
 //        throw new SyntaxError("function not yet implemented");
 
         return ret;

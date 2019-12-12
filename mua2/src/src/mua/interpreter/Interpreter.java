@@ -1,6 +1,7 @@
 package src.mua.interpreter;
 
 
+import src.mua.Expr;
 import src.mua.exception.MUAException;
 import src.mua.exception.SyntaxException;
 import src.mua.dataType.*;
@@ -8,6 +9,8 @@ import src.mua.dataType.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static src.mua.utils.ParserUtil.parseObj;
+import static src.mua.utils.ParserUtil.parseToken;
 
 
 public class Interpreter {

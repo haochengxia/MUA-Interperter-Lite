@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8a3ad7e-e48a-402d-a308-bafb85060dd2" name="Default Changelist" comment="" />
+    <list default="true" id="b8a3ad7e-e48a-402d-a308-bafb85060dd2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../mua/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mua1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mua1/src/src/mua/Interpreter/Interpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Export.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Output.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Stop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/If.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isbool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isempty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Islist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isnumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/mua/utils/TransUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mua/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mua/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mua/out/production/mua/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../mua/out/production/mua/src.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/Func.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/Func.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/interpreter/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Erase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Erase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Isname.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Isname.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Make.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Make.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Read.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Readlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Readlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Repeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Repeat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Thing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Thing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/And.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/And.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Div.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Eq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Eq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Gt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Gt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Lt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Lt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Mod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Mod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Mul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Mul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Not.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Not.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Or.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Or.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Sub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/ArgUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/ArgUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/ParserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/ParserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/RunningUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/RunUtil.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,26 +56,35 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UopEQY7gGBHoFAXBKHtqBgDv6T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mua_new" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <option name="MAIN_CLASS_NAME" value="src.mua.Main" />
       <module name="mua2" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -61,9 +112,37 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="70" y="46" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576139334246">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state x="70" y="46" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1210.693@70.27.1210.693" timestamp="1576139334246" />
     <state x="461" y="127" width="424" height="497" key="FileChooserDialogImpl" timestamp="1576032721161">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
     <state x="461" y="127" width="424" height="497" key="FileChooserDialogImpl/70.27.1210.693@70.27.1210.693" timestamp="1576032721161" />
+    <state width="1164" height="157" key="GridCell.Tab.0.bottom" timestamp="1576149845109">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state width="1164" height="157" key="GridCell.Tab.0.bottom/70.27.1210.693@70.27.1210.693" timestamp="1576149845109" />
+    <state width="1164" height="157" key="GridCell.Tab.0.center" timestamp="1576149845108">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state width="1164" height="157" key="GridCell.Tab.0.center/70.27.1210.693@70.27.1210.693" timestamp="1576149845108" />
+    <state width="1164" height="157" key="GridCell.Tab.0.left" timestamp="1576149845108">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state width="1164" height="157" key="GridCell.Tab.0.left/70.27.1210.693@70.27.1210.693" timestamp="1576149845108" />
+    <state width="1164" height="157" key="GridCell.Tab.0.right" timestamp="1576149845109">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state width="1164" height="157" key="GridCell.Tab.0.right/70.27.1210.693@70.27.1210.693" timestamp="1576149845109" />
+    <state x="273" y="108" width="800" height="541" key="Vcs.Push.Dialog.v2" timestamp="1576150054999">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state x="273" y="108" width="800" height="541" key="Vcs.Push.Dialog.v2/70.27.1210.693@70.27.1210.693" timestamp="1576150054999" />
+    <state x="70" y="21" width="1206" height="699" key="new project wizard" timestamp="1576141516707">
+      <screen x="70" y="27" width="1210" height="693" />
+    </state>
+    <state x="70" y="21" width="1206" height="699" key="new project wizard/70.27.1210.693@70.27.1210.693" timestamp="1576141516707" />
   </component>
 </project>

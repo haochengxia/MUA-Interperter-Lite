@@ -8,7 +8,9 @@ import src.mua.interpreter.Scope;
 
 import java.util.ArrayList;
 
-public class RunningUtil {
+import static src.mua.utils.ParserUtil.parseObj;
+
+public class RunUtil {
     public static MUAObject runList(Scope scope, List l) throws Exception {
         ArrayList<String> tokens = new ArrayList<>();
         for (MUAObject token : l.getValue()) {

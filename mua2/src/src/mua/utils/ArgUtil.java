@@ -1,17 +1,19 @@
 package src.mua.utils;
 
-public class ArgUtil {
-}
+import src.mua.Expr;
+import src.mua.dataType.Number;
+import src.mua.dataType.Bool;
+import src.mua.dataType.List;
+import src.mua.dataType.MUAObject;
+import src.mua.dataType.Word;
+import src.mua.exception.ArgException;
+import src.mua.exception.TypeException;
+import src.mua.interpreter.Scope;
 
-package lib.util;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-        import lib.*;
-        import lib.Number;
-        import lib.error.ArgError;
-        import lib.error.TypeError;
 
-        import java.util.ArrayList;
-        import java.util.HashMap;
 
 public class ArgUtil {
     public static HashMap<Class, String> CLASS_TO_STR = new HashMap<>();
@@ -25,11 +27,11 @@ public class ArgUtil {
 
     public static void argCheck(String name,
                                 ArrayList<Class> typelist,
-                                ArrayList<MUAObject> arglist) throws ArgError, TypeError {
+                                ArrayList<MUAObject> arglist) throws ArgException, TypeException {
 
         // arg count
         if (arglist.size() != typelist.size()) {
-            throw new ArgError(name + " takes " + typelist.size() + " arguments but "
+            throw new ArgException(name + " takes " + typelist.size() + " arguments but "
                     + arglist.size() + " were given.");
         }
 
@@ -40,7 +42,7 @@ public class ArgUtil {
                 arglist.set(i, o);
             }
             if (!(typelist.get(i).isInstance(arglist.get(i)))) {
-                throw new TypeError(name + " expect " + (i + 1) +
+                throw new TypeException(name + " expect " + (i + 1) +
                         "th argument to be type '" + CLASS_TO_STR.get(typelist.get(i))
                         + "' but '" + arglist.get(i).getTypeString().toString() + "' were given.");
             }

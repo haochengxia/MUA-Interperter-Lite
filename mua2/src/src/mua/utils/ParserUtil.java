@@ -1,19 +1,23 @@
 package src.mua.utils;
 
-        import src.mua.dataType.Number;
-        import src.mua.dataType.MUAObject;
-        import src.mua.dataType.Word;
-        import src.mua.dataType.List;
-        import src.mua.exception.SyntaxException;
-        import src.mua.interpreter.Scope;
+import src.mua.dataType.Number;
+import src.mua.dataType.MUAObject;
+import src.mua.dataType.Word;
+import src.mua.dataType.List;
+import src.mua.exception.SyntaxException;
+import src.mua.interpreter.Scope;
+import src.mua.op.*;
+import src.mua.op.operator.*;
+import src.mua.op.func.*;
+import src.mua.op.judge.*;
 
-        import src.mua.Expr;
-        import src.mua.Func;
+import src.mua.Expr;
+import src.mua.Func;
 
-        import java.lang.reflect.Constructor;
-        import java.util.ArrayList;
-        import java.util.Arrays;
-        import java.util.HashMap;
+import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 
 public class ParserUtil {
@@ -22,41 +26,33 @@ public class ParserUtil {
 //            if (str.length() == 1)
 //                throw new SyntaxError("empty word body");
             return new Word(str.substring(1));
-        }
-        else if (str.equals("false")) {
+        } else if (str.equals("false")) {
 //            return new Bool(false);
             return new Word(str);
-        }
-        else if (str.equals("true")) {
+        } else if (str.equals("true")) {
 //            return new Bool(true);
             return new Word(str);
-        }
-
-        else if (Character.isDigit(str.charAt(0)) || str.charAt(0) == '-') {
+        } else if (Character.isDigit(str.charAt(0)) || str.charAt(0) == '-') {
             try {
-                Number test =  new Number(Double.parseDouble(str));
+                Number test = new Number(Double.parseDouble(str));
                 return new Word(str);
-            }
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 throw new SyntaxException("invalid number literal: '" + str + "'");
 
             }
-        }
-        else if (str.startsWith("[") && str.endsWith("]")) {
+        } else if (str.startsWith("[") && str.endsWith("]")) {
             ArrayList<String> content = parseToken(str.substring(1, str.length() - 1));
             ArrayList<MUAObject> objlist = new ArrayList<>();
             for (String token : content) {
                 if (token.startsWith("[") && token.endsWith("]")) {
                     objlist.add(parseBasicObj(token));
-                }
-                else {
+                } else {
                     objlist.add(new Word(token));
                 }
 
             }
             return new List(objlist);
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -75,8 +71,7 @@ public class ParserUtil {
         Class c = null;
         if (obj != null) {
             objlist.add(0, obj);
-        }
-        else if (keywordToClass.containsKey(token)){
+        } else if (keywordToClass.containsKey(token)) {
             c = keywordToClass.get(token);
             Constructor ctor = c.getConstructor();
             Expr expr = (Expr) ctor.newInstance();
@@ -89,8 +84,7 @@ public class ParserUtil {
             }
             expr.setArglist(arglist);
             objlist.add(0, expr);
-        }
-        else {
+        } else {
             c = Func.class;
             Func func = new Func(token, scope);
             int argNum = func.getArgNum();
@@ -121,8 +115,7 @@ public class ParserUtil {
                     tokens.add(item);
                 else
                     temp.add(item);
-            }
-            else if (item.startsWith(":")) {
+            } else if (item.startsWith(":")) {
                 if (count == 0)
                     tokens.add("thing");
                 else
@@ -131,25 +124,21 @@ public class ParserUtil {
                     items.set(i, "\"" + item.substring(1));
                     i--;
                 }
-            }
-            else
-            {
+            } else {
                 String prefix = "[";
                 while (item.startsWith(prefix)) {
                     count++;
                     prefix += "[";
                 }
                 String suffix = "]";
-                while (item.endsWith(suffix))
-                {
+                while (item.endsWith(suffix)) {
                     count--;
                     suffix += "]";
                 }
                 temp.add(item);
                 if (count < 0) {
                     throw new SyntaxException("Unpaired ']'");
-                }
-                else if (count == 0) {
+                } else if (count == 0) {
                     tokens.add(String.join(" ", temp));
                     temp.clear();
                 }
@@ -163,40 +152,51 @@ public class ParserUtil {
     }
 
 
-
     private static final HashMap<String, Class> keywordToClass = new HashMap<>();
+
     static {
-        keywordToClass.put("make", Make.class);
-        keywordToClass.put("erase", Erase.class);
-        keywordToClass.put("print", Print.class);
-        keywordToClass.put("readlist", Readlist.class);
-        keywordToClass.put(":", Thing.class);
-        keywordToClass.put("thing", Thing.class);
-        keywordToClass.put("isname", Isname.class);
-        keywordToClass.put("read", Read.class);
-        keywordToClass.put("add", Add.class);
-        keywordToClass.put("sub", Sub.class);
-        keywordToClass.put("mul", Mul.class);
-        keywordToClass.put("div", Div.class);
-        keywordToClass.put("mod", Mod.class);
-        keywordToClass.put("eq", Eq.class);
-        keywordToClass.put("gt", Gt.class);
-        keywordToClass.put("lt", Lt.class);
-        keywordToClass.put("and", And.class);
-        keywordToClass.put("or", Or.class);
-        keywordToClass.put("not", Not.class);
-        keywordToClass.put("repeat", Repeat.class);
-        keywordToClass.put("output", Output.class);
-        keywordToClass.put("stop", Stop.class);
-        keywordToClass.put("export", Export.class);
-        keywordToClass.put("isnumber", Isnumber.class);
-        keywordToClass.put("isword", Isword.class);
-        keywordToClass.put("islist", Islist.class);
-        keywordToClass.put("isbool", Isbool.class);
-        keywordToClass.put("isempty", Isempty.class);
-        keywordToClass.put("random", Random.class);
-        keywordToClass.put("sqrt", Sqrt.class);
-        keywordToClass.put("int", Int.class);
+        keywordToClass.put("make",      Make.class);
+        keywordToClass.put("erase",     Erase.class);
+        keywordToClass.put("print",     Print.class);
+        keywordToClass.put("readlist",  Readlist.class);
+        keywordToClass.put(":",         Thing.class);
+        keywordToClass.put("thing",     Thing.class);
+        keywordToClass.put("isname",    Isname.class);
+        keywordToClass.put("read",      Read.class);
+        keywordToClass.put("add",       Add.class);
+        keywordToClass.put("sub",       Sub.class);
+        keywordToClass.put("mul",       Mul.class);
+        keywordToClass.put("div",       Div.class);
+        keywordToClass.put("mod",       Mod.class);
+        keywordToClass.put("eq",        Eq.class);
+        keywordToClass.put("gt",        Gt.class);
+        keywordToClass.put("lt",        Lt.class);
+        keywordToClass.put("and",       And.class);
+        keywordToClass.put("or",        Or.class);
+        keywordToClass.put("not",       Not.class);
+        keywordToClass.put("repeat",    Repeat.class);
+        keywordToClass.put("output",    Output.class);
+        keywordToClass.put("stop",      Stop.class);
+        keywordToClass.put("export",    Export.class);
+        keywordToClass.put("isnumber",  Isnumber.class);
+        keywordToClass.put("isword",    Isword.class);
+        keywordToClass.put("islist",    Islist.class);
+        keywordToClass.put("isbool",    Isbool.class);
+        keywordToClass.put("isempty",   Isempty.class);
+        keywordToClass.put("if",        If.class);
+
+        /* TODO waiting for fix in stage 3
+        keywordToClass.put("random",    Random.class);
+        keywordToClass.put("sqrt",      Sqrt.class);
+        keywordToClass.put("int",       Int.class);
+
+        keywordToClass.put("wait",      Wait.class);
+        keywordToClass.put("save",      Save.class);
+        keywordToClass.put("load",      Load.class);
+        keywordToClass.put("erall",     Erall.class);
+        keywordToClass.put("poall",     Poall.class);
+
+         */
 
     }
 }
