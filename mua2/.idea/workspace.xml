@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8a3ad7e-e48a-402d-a308-bafb85060dd2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../mua/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mua1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mua1/src/src/mua/Interpreter/Interpreter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Export.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/func/Stop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/If.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isbool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isempty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Islist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isnumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/op/judge/Isword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/src/mua/utils/TransUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mua/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mua/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mua/out/production/mua/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../mua/out/production/mua/src.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/Func.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/Func.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/interpreter/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/interpreter/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Erase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Erase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Isname.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Isname.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Make.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Make.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Print.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Read.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Readlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Readlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Repeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Repeat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/Thing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/Thing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/And.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/And.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Div.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Div.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Eq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Eq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Gt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Gt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Lt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Lt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Mod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Mod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Mul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Mul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Not.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Not.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Or.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Or.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/op/operator/Sub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/op/operator/Sub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/ArgUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/ArgUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/ParserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/ParserUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/mua/utils/RunningUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/mua/utils/RunUtil.java" afterDir="false" />
-    </list>
+    <list default="true" id="b8a3ad7e-e48a-402d-a308-bafb85060dd2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,22 +78,22 @@
       <screen x="70" y="27" width="1210" height="693" />
     </state>
     <state x="461" y="127" width="424" height="497" key="FileChooserDialogImpl/70.27.1210.693@70.27.1210.693" timestamp="1576032721161" />
-    <state width="1164" height="157" key="GridCell.Tab.0.bottom" timestamp="1576149845109">
+    <state width="1164" height="157" key="GridCell.Tab.0.bottom" timestamp="1576150114578">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
-    <state width="1164" height="157" key="GridCell.Tab.0.bottom/70.27.1210.693@70.27.1210.693" timestamp="1576149845109" />
-    <state width="1164" height="157" key="GridCell.Tab.0.center" timestamp="1576149845108">
+    <state width="1164" height="157" key="GridCell.Tab.0.bottom/70.27.1210.693@70.27.1210.693" timestamp="1576150114578" />
+    <state width="1164" height="157" key="GridCell.Tab.0.center" timestamp="1576150114577">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
-    <state width="1164" height="157" key="GridCell.Tab.0.center/70.27.1210.693@70.27.1210.693" timestamp="1576149845108" />
-    <state width="1164" height="157" key="GridCell.Tab.0.left" timestamp="1576149845108">
+    <state width="1164" height="157" key="GridCell.Tab.0.center/70.27.1210.693@70.27.1210.693" timestamp="1576150114577" />
+    <state width="1164" height="157" key="GridCell.Tab.0.left" timestamp="1576150114576">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
-    <state width="1164" height="157" key="GridCell.Tab.0.left/70.27.1210.693@70.27.1210.693" timestamp="1576149845108" />
-    <state width="1164" height="157" key="GridCell.Tab.0.right" timestamp="1576149845109">
+    <state width="1164" height="157" key="GridCell.Tab.0.left/70.27.1210.693@70.27.1210.693" timestamp="1576150114576" />
+    <state width="1164" height="157" key="GridCell.Tab.0.right" timestamp="1576150114577">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
-    <state width="1164" height="157" key="GridCell.Tab.0.right/70.27.1210.693@70.27.1210.693" timestamp="1576149845109" />
+    <state width="1164" height="157" key="GridCell.Tab.0.right/70.27.1210.693@70.27.1210.693" timestamp="1576150114577" />
     <state x="273" y="108" width="800" height="541" key="Vcs.Push.Dialog.v2" timestamp="1576150054999">
       <screen x="70" y="27" width="1210" height="693" />
     </state>
