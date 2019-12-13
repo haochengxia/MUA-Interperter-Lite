@@ -1,5 +1,8 @@
 package src.mua.exception;
 
+/**
+ *
+ */
 public class NameException extends MUAException {
 
     public NameException(String str) {
