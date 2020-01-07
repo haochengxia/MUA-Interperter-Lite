@@ -36,19 +36,19 @@ public class Interpreter {
         }
         while (true) {
             if (line.startsWith("make")&& !line.endsWith("[")&&!line.endsWith("]"))
-            // 另一种情况需要在读一行　那就是　make "length \n [
+            // 另一种情况需要在读一行　那就是　make "length \n [ TODO stop sys out
             {
 
                 ArrayList<String> list=new ArrayList<String>(Arrays.asList(line.split("\\s")));
-                System.out.println("the real line2: " + line);
+                //System.out.println("the real line2: " + line);
             for (int i = 0;i<2;i++){
-                System.out.println("split: "+list.get(i) );
+                //System.out.println("split: "+list.get(i) );
             }
             if (list.get(0).equals("make")&& list.get(list.size()-1).startsWith("\"") && !list.get(list.size()-1).endsWith("[")&&!list.get(list.size()-1).endsWith("]")){
                 String temp = getLineWithoutComment(LineStarch.nextLine());
-                System.out.println("get next line: " + temp);
+                //System.out.println("get next line: " + temp);
                 line += " " + temp;
-                System.out.println("the real line: " + line);
+                //System.out.println("the real line: " + line);
                 //continue;
             }
             }
@@ -99,7 +99,8 @@ public class Interpreter {
                         // update the namespace
 //                        System.out.println("In this part" + none.noneNameSpace.toString());
 //                        global.nameSpace.putAll(none.noneNameSpace);
-                        System.out.println("In this part"+none.test);
+                        // TODO STOP sys out
+                        // System.out.println("In this part"+none.test);
                     }
                 }
                 if (!(ret instanceof None)) {
@@ -134,9 +135,18 @@ public class Interpreter {
             // before that we need to format the line
             String formattedLine = getLine(line,LineStarch);
             calculateLine(formattedLine);
+            if (!loadCommand.equals("nothing")) {
+                //System.out.println("do one");
+                calculateLine(formattedLine);
+                ArrayList<String> arrayList  = new ArrayList(Arrays.asList(loadCommand.split("\\n")));
+                for (String s : arrayList) calculateLine(s);
+                loadCommand = "nothing";
+            }
+
         }  catch (Exception e) {
             e.printStackTrace();
         }
     }
     public NameSpace global = new NameSpace();
+    public  static String loadCommand = "nothing";
 }

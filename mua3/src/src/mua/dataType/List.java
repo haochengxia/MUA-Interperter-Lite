@@ -25,6 +25,7 @@ public class List extends Object {
             content += (first ? "" : " ") + v.toString();
             first = false;
         }
+        // change in 2020/1/6 [-]return "[" + content + "]";
         return "[" + content + "]";
     }
 

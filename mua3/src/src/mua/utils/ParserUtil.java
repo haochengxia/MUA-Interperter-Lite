@@ -154,8 +154,8 @@ public class ParserUtil {
                         items.add(i+1,"]");
                 }
                 InfixUtil infixUtil = new InfixUtil();
-                System.out.println(item);
-                System.out.println(item.replace('@', ' '));
+                //System.out.println(item);
+                //System.out.println(item.replace('@', ' '));
                 java.util.List<String> tempE = infixUtil.inTransPre(item.replace('@', ' '));
                 //tokens.addAll(tempE);
                 // 用这个当前的tempE来换之前的那个元素

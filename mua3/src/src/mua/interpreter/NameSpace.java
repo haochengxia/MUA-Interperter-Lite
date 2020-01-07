@@ -85,13 +85,13 @@ public class NameSpace implements Serializable {
         for (Object obj : newNameSpace.nameSpace.values()) {
             obj.enclosingNameSpace = this;
         }
-        System.out.println("before put all"+newNameSpace.nameSpace.toString());
+        //System.out.println("before put all"+newNameSpace.nameSpace.toString());
         for (String str : getAllName())
             System.out.println(str);
         nameSpace.putAll(newNameSpace.nameSpace);
         // we need to update the interpreter global
         //for (String str : getAllName())
-        System.out.println("After put all"+nameSpace.toString());
+        //System.out.println("After put all"+nameSpace.toString());
         for (String str : getAllName())
             System.out.println(str);
     }

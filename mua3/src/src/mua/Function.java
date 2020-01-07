@@ -79,7 +79,7 @@ public class Function extends Expression {
         NameSpace local = new NameSpace(name, NameSpace.Type.LOCAL, funcEnclosingNameSpace);
         //System.out.println("arg num = "+ argNames.size() + "argName"+argNames.toString());
         for (int i = 0; i < argNames.size(); i++) {
-            System.out.println("arg num = "+ argNames.size() + "argName"+argNames.toString());
+            // System.out.println("arg num = "+ argNames.size() + "argName"+argNames.toString());
             local.addName(argNames.get(i), argList.get(i));
         }
         Object ret = RunTimeUtil.runList(local, funcBody);

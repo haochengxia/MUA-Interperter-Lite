@@ -1,6 +1,7 @@
 package src.mua.op.basic;
 
 import src.mua.Expression;
+import src.mua.dataType.List;
 import src.mua.dataType.Object;
 import src.mua.dataType.None;
 import src.mua.interpreter.NameSpace;
@@ -37,7 +38,14 @@ public class Print extends Expression {
         super.calculate(nameSpace);
         ArgumentUtil.argCheck(getOpName(), argTypes, argList);
         Object obj = argList.get(0);
-        System.out.println(obj);
+        if (obj instanceof List){
+            String raw = obj.toString();
+            // modified in 2020/1/6
+            System.out.println(raw.substring(1,raw.length()-1));
+        }
+        else{
+            System.out.println(obj);
+        }
         return new None();
 
     }

@@ -7,6 +7,10 @@ import java.util.List;
 
 public class InfixUtil {
     public List<String> inTransPre(String infixStr) {
+
+        //System.out.println("Total raw String" + infixStr);
+        infixStr = infixStr.replace("(-","(0-");
+        infixStr = infixStr.replace("+-","+0-");
         StringBuilder stringBuilder = new StringBuilder(infixStr.trim());
         // 统计有多少个运算符就可以知道参数的数量
         int validC = 0;
@@ -24,8 +28,11 @@ public class InfixUtil {
 
         String flag = "";
         char[] str = stringBuilder.toString().toCharArray();
-        for (int i = 0; i < str.length; i++){ System.out.println("str" + str[i]);
-        if (str[i] == ' ')  str[i] = '@';}
+        for (int i = 0; i < str.length; i++){
+            // TODO
+            //System.out.println("str" + str[i]);
+            if (str[i] == ' ')  str[i] = '@';
+        }
         //从左往右扫描
         for (int i = 0; i < str.length; i++) {
             if (isNotOp((flag + str[i]).trim())) {//判断flag+当前字符是否为数字
@@ -70,13 +77,15 @@ public class InfixUtil {
         }
         //反转List对象
         Collections.reverse(pnStack);
-        System.out.print("波兰式(前缀表达式)：");
+        // TODO sys out mark
+         //System.out.print("波兰式(前缀表达式)：");
         // 对加减乘除做替换
         for (int i =0;i<pnStack.size();i++){
             if (pnStack.get(i).contains("@"))
             {
                 String tmp[] = pnStack.get(i).split("@");
-                System.out.println("tmp"+tmp);
+                // TODO sys out mark
+                //System.out.println("tmp"+tmp);
                 pnStack.remove(i);
                 List<String> list = Arrays.asList(tmp);
                 pnStack.addAll(i,list);
@@ -93,8 +102,9 @@ public class InfixUtil {
 
 
         }
-        pnStack.stream().forEach(x -> System.out.print(x + " "));//迭代输出
-        System.out.println("");
+        // TODO sys out mark
+        //pnStack.stream().forEach(x -> System.out.print(x + " "));//迭代输出
+        //System.out.println("");
         return pnStack;
     }
 

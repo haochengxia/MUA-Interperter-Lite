@@ -3,12 +3,15 @@ package src.mua.op.other;
 import src.mua.Expression;
 import src.mua.dataType.None;
 import src.mua.dataType.Word;
+import src.mua.interpreter.Interpreter;
 import src.mua.interpreter.NameSpace;
 import src.mua.utils.ArgumentUtil;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static src.mua.interpreter.Interpreter.loadCommand;
 
 /**
  * load added in 12/27/2019
@@ -35,21 +38,30 @@ public class Load extends Expression {
 
         Word word = (Word)argList.get(firstArg);
         File file = new File(word.getValue());
+        String name = word.getValue();
+
+        FileInputStream input = null;
+        ByteArrayOutputStream output = null;
         // get file input
         try {
-            ObjectInputStream inputStream = new ObjectInputStream((new FileInputStream(file)));
-            NameSpace newNameSpace = (NameSpace) inputStream.readObject();
-            System.out.println("loadname"+newNameSpace.getAllName().toString());
+            input = new FileInputStream(name);
+            output = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int n;
+            while (-1 != (n=input.read(buffer))){
+                output.write(buffer, 0,n);
+            }
+
+            loadCommand = new String(output.toByteArray());
             //None none = new None(nameSpace.nameSpace);
-            None none = new None(newNameSpace.getAllName().toString());
-            nameSpace.addAllName(newNameSpace);
-            System.out.println("loadname2"+nameSpace.getAllName().toString());
-            inputStream.close();
-            nameSpace.deleteAllName();
+            None none = new None("noting");
             return none;
         }
         catch ( IOException e){
             e.printStackTrace();
+        }finally {
+            input.close();
+            output.close();
         }
         return new None();
     }

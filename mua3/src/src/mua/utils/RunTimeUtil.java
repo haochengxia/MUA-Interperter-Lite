@@ -17,9 +17,9 @@ public class RunTimeUtil {
         for (Object token : list.getValue()) {
             tokens.add(token.toString());
         }
-
-        for (int i =0;i<tokens.size();i++)
-        System.out.println("in runtime :"+tokens.get(i));
+        // TODO mark sys out
+        //for (int i =0;i<tokens.size();i++)
+            //System.out.println("in runtime :"+tokens.get(i));
         ArrayList<Object> objList = parseObj(tokens, nameSpace);
         for (Object obj : objList) {
             if (obj instanceof Expression) {

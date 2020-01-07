@@ -4,72 +4,9 @@ import  src.mua.interpreter.Interpreter;
 
 import java.util.Scanner;
 
-/** current version file structure
- *
- * src
- *     └─mua
- *         │  Expression.java
- *         │  Function.java
- *         │  Main.java
- *         │
- *         ├─dataType
- *         │      Bool.java
- *         │      List.java
- *         │      None.java
- *         │      Number.java
- *         │      Object.java
- *         │      Word.java
- *         │
- *         ├─interpreter
- *         │      Interpreter.java
- *         │      NameSpace.java
- *         │
- *         ├─op
- *         │  ├─additional
- *         │  │      Exit.java
- *         │  │
- *         │  ├─basic
- *         │  │      Erase.java
- *         │  │      Isname.java
- *         │  │      Make.java
- *         │  │      Print.java
- *         │  │      Read.java
- *         │  │      Readlist.java
- *         │  │      Repeat.java
- *         │  │      Thing.java
- *         │  │
- *         │  ├─func
- *         │  │      Export.java
- *         │  │      Output.java
- *         │  │      Stop.java
- *         │  │
- *         │  ├─judge
- *         │  │      If.java
- *         │  │      Isbool.java
- *         │  │      Isempty.java
- *         │  │      Islist.java
- *         │  │      Isnumber.java
- *         │  │      Isword.java
- *         │  │
- *         │  └─operator
- *         │          Add.java
- *         │          And.java
- *         │          Div.java
- *         │          Eq.java
- *         │          Gt.java
- *         │          Lt.java
- *         │          Mod.java
- *         │          Mul.java
- *         │          Not.java
- *         │          Or.java
- *         │          Sub.java
- *         │
- *         └─utils
- *                 ArgumentUtil.java
- *                 ParserUtil.java
- *                 RunTimeUtil.java
- *                 TransUtil.java
- */
+import static src.mua.interpreter.Interpreter.loadCommand;
+
+
 
 
 public class Main {
@@ -82,7 +19,11 @@ public class Main {
             if (!LineStarch.hasNextLine()) break;
             String line = LineStarch.nextLine();
             //System.out.println(line);
+//            if (!loadCommand.equals("no"))
+//                interpreter.next("no",LineStarch);
+
             interpreter.next(line,LineStarch);
+
         }
     }
 }
